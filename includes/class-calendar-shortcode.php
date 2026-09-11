@@ -1,6 +1,6 @@
 <?php
 /**
- * Calendar shortcode for Simple Events Pro.
+ * Calendar shortcode for Coqui Events Pro.
  */
 
 if (!defined('ABSPATH')) {
@@ -41,9 +41,9 @@ class Simple_Events_Pro_Calendar_Shortcode {
             <?php if ($show_filters) : ?>
                 <div class="se-pro-calendar-filters">
                     <label>
-                        <?php esc_html_e('Category:', 'simple-events-pro'); ?>
+                        <?php esc_html_e('Category:', 'coqui-events-pro'); ?>
                         <select class="se-pro-calendar-filter-category">
-                            <option value=""><?php esc_html_e('All Categories', 'simple-events-pro'); ?></option>
+                            <option value=""><?php esc_html_e('All Categories', 'coqui-events-pro'); ?></option>
                             <?php
                             $terms = get_terms(array(
                                 'taxonomy' => Simple_Events_Helpers::TAX_CATEGORY,
@@ -72,21 +72,21 @@ class Simple_Events_Pro_Calendar_Shortcode {
      */
     public function enqueue_calendar_assets() {
         wp_enqueue_style(
-            'simple-events-pro-calendar',
+            'coqui-events-pro-calendar',
             SIMPLE_EVENTS_PRO_URL . 'assets/css/calendar.css',
             array(),
             SIMPLE_EVENTS_PRO_VERSION
         );
 
         wp_enqueue_script(
-            'simple-events-pro-calendar',
+            'coqui-events-pro-calendar',
             SIMPLE_EVENTS_PRO_URL . 'assets/js/calendar.js',
             array(),
             SIMPLE_EVENTS_PRO_VERSION,
             true
         );
 
-        wp_localize_script('simple-events-pro-calendar', 'simpleEventsProCalendar', array(
+        wp_localize_script('coqui-events-pro-calendar', 'simpleEventsProCalendar', array(
             'ajaxUrl' => admin_url('admin-ajax.php'),
             'nonce'   => wp_create_nonce('se_pro_calendar'),
         ));

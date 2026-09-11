@@ -1,23 +1,23 @@
 <?php
 /**
- * Plugin Name: Simple Events Pro
- * Description: Premium recurring-event features for the Simple Events CPT plugin.
- * Version: 0.1.0
+ * Plugin Name: Coqui Events Pro
+ * Description: Premium recurring-event features for the Coqui Events plugin.
+ * Version: 0.2.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Josh
- * Text Domain: simple-events-pro
+ * Text Domain: coqui-events-pro
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
- * Requires Plugins: simple-events-cpt
+ * Requires Plugins: coqui-events
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-define('SIMPLE_EVENTS_PRO_VERSION', '0.1.0');
+define('SIMPLE_EVENTS_PRO_VERSION', '0.2.0');
 define('SIMPLE_EVENTS_PRO_FILE', __FILE__);
 define('SIMPLE_EVENTS_PRO_DIR', plugin_dir_path(__FILE__));
 define('SIMPLE_EVENTS_PRO_URL', plugin_dir_url(__FILE__));
@@ -35,7 +35,7 @@ function simple_events_pro_init() {
         return;
     }
 
-    load_plugin_textdomain('simple-events-pro', false, dirname(plugin_basename(SIMPLE_EVENTS_PRO_FILE)) . '/languages');
+    load_plugin_textdomain('coqui-events-pro', false, dirname(plugin_basename(SIMPLE_EVENTS_PRO_FILE)) . '/languages');
 
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-recurrence.php';
     new Simple_Events_Pro_Recurrence();
@@ -63,7 +63,7 @@ function simple_events_pro_init() {
  */
 function simple_events_pro_subscribe_shortcode($atts) {
     $url = Simple_Events_Pro_iCal::get_subscription_url();
-    return '<a href="' . esc_url($url) . '" class="se-pro-ical-link se-pro-ical-subscribe" title="' . esc_attr__('Subscribe to calendar feed', 'simple-events-pro') . '">' . esc_html__('Subscribe to Events', 'simple-events-pro') . '</a>';
+    return '<a href="' . esc_url($url) . '" class="se-pro-ical-link se-pro-ical-subscribe" title="' . esc_attr__('Subscribe to calendar feed', 'coqui-events-pro') . '">' . esc_html__('Subscribe to Events', 'coqui-events-pro') . '</a>';
 }
 
 /**
@@ -93,6 +93,6 @@ function simple_events_pro_missing_core_notice() {
         return;
     }
     ?>
-    <div class="notice notice-error"><p><?php esc_html_e('Simple Events Pro requires the Simple Events CPT plugin to be installed and active.', 'simple-events-pro'); ?></p></div>
+    <div class="notice notice-error"><p><?php esc_html_e('Coqui Events Pro requires the Coqui Events plugin to be installed and active.', 'coqui-events-pro'); ?></p></div>
     <?php
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Calendar view and generation for Simple Events Pro.
+ * Calendar view and generation for Coqui Events Pro.
  */
 
 if (!defined('ABSPATH')) {
@@ -132,16 +132,16 @@ class Simple_Events_Pro_Calendar {
         ?>
         <div class="se-pro-calendar">
             <div class="se-pro-calendar__nav">
-                <a href="#" class="se-pro-calendar__prev" data-date="<?php echo esc_attr($prev_date); ?>" title="<?php esc_attr_e('Previous month', 'simple-events-pro'); ?>">←</a>
+                <a href="#" class="se-pro-calendar__prev" data-date="<?php echo esc_attr($prev_date); ?>" title="<?php esc_attr_e('Previous month', 'coqui-events-pro'); ?>">←</a>
                 <h2 class="se-pro-calendar__title"><?php echo esc_html($calendar['month_name'] . ' ' . $calendar['year']); ?></h2>
-                <a href="#" class="se-pro-calendar__next" data-date="<?php echo esc_attr($next_date); ?>" title="<?php esc_attr_e('Next month', 'simple-events-pro'); ?>">→</a>
+                <a href="#" class="se-pro-calendar__next" data-date="<?php echo esc_attr($next_date); ?>" title="<?php esc_attr_e('Next month', 'coqui-events-pro'); ?>">→</a>
             </div>
 
             <table class="se-pro-calendar__table">
                 <thead>
                     <tr>
                         <?php foreach (array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') as $day) : ?>
-                            <th><?php echo esc_html_x($day[0], 'Day of week abbreviation', 'simple-events-pro'); ?></th>
+                            <th><?php echo esc_html_x($day[0], 'Day of week abbreviation', 'coqui-events-pro'); ?></th>
                         <?php endforeach; ?>
                     </tr>
                 </thead>

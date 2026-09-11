@@ -1,6 +1,6 @@
 <?php
 /**
- * iCalendar download and feed handlers for Simple Events Pro.
+ * iCalendar download and feed handlers for Coqui Events Pro.
  */
 
 if (!defined('ABSPATH')) {
@@ -43,7 +43,7 @@ class Simple_Events_Pro_iCal_Handler {
         $event_ids = $query->posts;
         wp_reset_postdata();
 
-        $ical = Simple_Events_Pro_iCal::generate_events_ical($event_ids, __('Upcoming Events', 'simple-events-pro'));
+        $ical = Simple_Events_Pro_iCal::generate_events_ical($event_ids, __('Upcoming Events', 'coqui-events-pro'));
 
         header('Content-Type: text/calendar; charset=utf-8');
         header('Content-Disposition: inline; filename="events.ics"');

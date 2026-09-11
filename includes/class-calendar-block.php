@@ -1,6 +1,6 @@
 <?php
 /**
- * Gutenberg Calendar block for Simple Events Pro.
+ * Gutenberg Calendar block for Coqui Events Pro.
  */
 
 if (!defined('ABSPATH')) {
@@ -31,18 +31,18 @@ class Simple_Events_Pro_Calendar_Block {
         }
 
         wp_register_script(
-            'simple-events-pro-calendar-block',
+            'coqui-events-pro-calendar-block',
             plugin_dir_url(SIMPLE_EVENTS_PRO_FILE) . 'assets/js/calendar-block.js',
             array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n'),
             SIMPLE_EVENTS_PRO_VERSION,
             true
         );
 
-        register_block_type('simple-events-pro/event-calendar', array(
+        register_block_type('coqui-events-pro/event-calendar', array(
             'api_version'     => 2,
-            'editor_script'   => 'simple-events-pro-calendar-block',
-            'editor_style'    => 'simple-events-pro-calendar',
-            'style'           => 'simple-events-pro-calendar',
+            'editor_script'   => 'coqui-events-pro-calendar-block',
+            'editor_style'    => 'coqui-events-pro-calendar',
+            'style'           => 'coqui-events-pro-calendar',
             'attributes'      => array(
                 'month'        => array(
                     'type'    => 'string',

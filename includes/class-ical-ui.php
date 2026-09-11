@@ -1,6 +1,6 @@
 <?php
 /**
- * iCalendar UI elements for Simple Events Pro.
+ * iCalendar UI elements for Coqui Events Pro.
  */
 
 if (!defined('ABSPATH')) {
@@ -19,7 +19,7 @@ class Simple_Events_Pro_iCal_UI {
      */
     public function enqueue_ical_styles() {
         wp_enqueue_style(
-            'simple-events-pro-ical',
+            'coqui-events-pro-ical',
             plugin_dir_url(SIMPLE_EVENTS_PRO_FILE) . 'assets/css/ical.css',
             array(),
             SIMPLE_EVENTS_PRO_VERSION
@@ -43,10 +43,10 @@ class Simple_Events_Pro_iCal_UI {
 
         $links = '<div class="se-pro-ical-links">';
         $links .= '<a href="' . esc_url($download_url) . '" class="se-pro-ical-link se-pro-ical-download" download>';
-        $links .= esc_html__('Download Event (.ics)', 'simple-events-pro');
+        $links .= esc_html__('Download Event (.ics)', 'coqui-events-pro');
         $links .= '</a>';
-        $links .= '<a href="' . esc_url($feed_url) . '" class="se-pro-ical-link se-pro-ical-subscribe" title="' . esc_attr__('Add to your calendar app', 'simple-events-pro') . '">';
-        $links .= esc_html__('Subscribe to Events', 'simple-events-pro');
+        $links .= '<a href="' . esc_url($feed_url) . '" class="se-pro-ical-link se-pro-ical-subscribe" title="' . esc_attr__('Add to your calendar app', 'coqui-events-pro') . '">';
+        $links .= esc_html__('Subscribe to Events', 'coqui-events-pro');
         $links .= '</a>';
         $links .= '</div>';
 
@@ -61,9 +61,9 @@ class Simple_Events_Pro_iCal_UI {
     public static function render_ical_button($post_id) {
         $download_url = Simple_Events_Pro_iCal::get_event_download_url($post_id);
         ?>
-        <a href="<?php echo esc_url($download_url); ?>" class="se-pro-ical-button" download title="<?php esc_attr_e('Download this event', 'simple-events-pro'); ?>">
+        <a href="<?php echo esc_url($download_url); ?>" class="se-pro-ical-button" download title="<?php esc_attr_e('Download this event', 'coqui-events-pro'); ?>">
             <span class="se-pro-ical-icon">📅</span>
-            <?php esc_html_e('Add to Calendar', 'simple-events-pro'); ?>
+            <?php esc_html_e('Add to Calendar', 'coqui-events-pro'); ?>
         </a>
         <?php
     }

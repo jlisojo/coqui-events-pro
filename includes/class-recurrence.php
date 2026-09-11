@@ -1,6 +1,6 @@
 <?php
 /**
- * Recurrence controls for Simple Events Pro.
+ * Recurrence controls for Coqui Events Pro.
  */
 
 if (!defined('ABSPATH')) {
@@ -30,7 +30,7 @@ class Simple_Events_Pro_Recurrence {
     public function add_meta_box() {
         add_meta_box(
             'se_pro_recurrence',
-            __('Recurring Event', 'simple-events-pro'),
+            __('Recurring Event', 'coqui-events-pro'),
             array($this, 'render_meta_box'),
             Simple_Events_Helpers::POST_TYPE,
             'side',
@@ -51,20 +51,20 @@ class Simple_Events_Pro_Recurrence {
         $end_date = get_post_meta($post->ID, self::META_END_DATE, true);
         ?>
         <p>
-            <label for="se_pro_recurrence_frequency"><?php esc_html_e('Repeats', 'simple-events-pro'); ?></label>
+            <label for="se_pro_recurrence_frequency"><?php esc_html_e('Repeats', 'coqui-events-pro'); ?></label>
             <select id="se_pro_recurrence_frequency" name="se_pro_recurrence_frequency">
-                <option value="none" <?php selected($frequency, 'none'); ?>><?php esc_html_e('Does not repeat', 'simple-events-pro'); ?></option>
-                <option value="daily" <?php selected($frequency, 'daily'); ?>><?php esc_html_e('Daily', 'simple-events-pro'); ?></option>
-                <option value="weekly" <?php selected($frequency, 'weekly'); ?>><?php esc_html_e('Weekly', 'simple-events-pro'); ?></option>
-                <option value="monthly" <?php selected($frequency, 'monthly'); ?>><?php esc_html_e('Monthly', 'simple-events-pro'); ?></option>
+                <option value="none" <?php selected($frequency, 'none'); ?>><?php esc_html_e('Does not repeat', 'coqui-events-pro'); ?></option>
+                <option value="daily" <?php selected($frequency, 'daily'); ?>><?php esc_html_e('Daily', 'coqui-events-pro'); ?></option>
+                <option value="weekly" <?php selected($frequency, 'weekly'); ?>><?php esc_html_e('Weekly', 'coqui-events-pro'); ?></option>
+                <option value="monthly" <?php selected($frequency, 'monthly'); ?>><?php esc_html_e('Monthly', 'coqui-events-pro'); ?></option>
             </select>
         </p>
         <p>
-            <label for="se_pro_recurrence_interval"><?php esc_html_e('Repeat every', 'simple-events-pro'); ?></label>
+            <label for="se_pro_recurrence_interval"><?php esc_html_e('Repeat every', 'coqui-events-pro'); ?></label>
             <input type="number" id="se_pro_recurrence_interval" name="se_pro_recurrence_interval" value="<?php echo esc_attr($interval ? $interval : 1); ?>" min="1" max="365" />
         </p>
         <p>
-            <label for="se_pro_recurrence_end_date"><?php esc_html_e('Repeat until', 'simple-events-pro'); ?></label>
+            <label for="se_pro_recurrence_end_date"><?php esc_html_e('Repeat until', 'coqui-events-pro'); ?></label>
             <input type="date" id="se_pro_recurrence_end_date" name="se_pro_recurrence_end_date" value="<?php echo esc_attr($end_date); ?>" />
         </p>
         <?php
@@ -123,7 +123,7 @@ class Simple_Events_Pro_Recurrence {
 
         add_meta_box(
             'se_pro_exceptions',
-            __('Occurrence Exceptions', 'simple-events-pro'),
+            __('Occurrence Exceptions', 'coqui-events-pro'),
             array($this, 'render_exceptions_meta_box'),
             Simple_Events_Helpers::POST_TYPE,
             'side',
@@ -141,7 +141,7 @@ class Simple_Events_Pro_Recurrence {
 
         $exceptions = self::get_exceptions($post->ID);
         ?>
-        <p><small><?php esc_html_e('Add a date to skip it, or reschedule it to a new date.', 'simple-events-pro'); ?></small></p>
+        <p><small><?php esc_html_e('Add a date to skip it, or reschedule it to a new date.', 'coqui-events-pro'); ?></small></p>
         <div id="se-pro-exceptions-list">
             <?php foreach ($exceptions as $original_date => $exception) : ?>
                 <div class="se-pro-exception" style="border-bottom: 1px solid #eee; padding: 10px 0;">
@@ -150,40 +150,40 @@ class Simple_Events_Pro_Recurrence {
                     </p>
                     <p style="margin: 5px 0;">
                         <?php if ($exception['type'] === 'skip') : ?>
-                            <span style="color: #999;"><?php esc_html_e('Skip this occurrence', 'simple-events-pro'); ?></span>
+                            <span style="color: #999;"><?php esc_html_e('Skip this occurrence', 'coqui-events-pro'); ?></span>
                         <?php else : ?>
-                            <?php esc_html_e('Reschedule to:', 'simple-events-pro'); ?>
+                            <?php esc_html_e('Reschedule to:', 'coqui-events-pro'); ?>
                             <strong><?php echo esc_html($exception['new_date']); ?></strong>
                         <?php endif; ?>
                     </p>
                     <p style="margin: 5px 0;">
                         <button class="button button-small se-pro-exception-remove" data-date="<?php echo esc_attr($original_date); ?>" type="button">
-                            <?php esc_html_e('Remove', 'simple-events-pro'); ?>
+                            <?php esc_html_e('Remove', 'coqui-events-pro'); ?>
                         </button>
                     </p>
                 </div>
             <?php endforeach; ?>
         </div>
         <p>
-            <label for="se_pro_exception_date"><?php esc_html_e('Occurrence date to modify', 'simple-events-pro'); ?></label>
+            <label for="se_pro_exception_date"><?php esc_html_e('Occurrence date to modify', 'coqui-events-pro'); ?></label>
             <input type="date" id="se_pro_exception_date" style="width: 100%; margin-bottom: 5px;" />
         </p>
         <p>
             <label>
                 <input type="radio" name="se_pro_exception_action" value="skip" checked />
-                <?php esc_html_e('Skip this occurrence', 'simple-events-pro'); ?>
+                <?php esc_html_e('Skip this occurrence', 'coqui-events-pro'); ?>
             </label>
         </p>
         <p>
             <label>
                 <input type="radio" name="se_pro_exception_action" value="reschedule" />
-                <?php esc_html_e('Reschedule to:', 'simple-events-pro'); ?>
+                <?php esc_html_e('Reschedule to:', 'coqui-events-pro'); ?>
             </label>
             <input type="date" id="se_pro_exception_new_date" style="width: 100%;" />
         </p>
         <p>
             <button id="se-pro-exception-add" class="button button-primary" type="button">
-                <?php esc_html_e('Add Exception', 'simple-events-pro'); ?>
+                <?php esc_html_e('Add Exception', 'coqui-events-pro'); ?>
             </button>
         </p>
         <input type="hidden" id="se_pro_exceptions_json" name="se_pro_exceptions_json" value="<?php echo esc_attr(wp_json_encode($exceptions)); ?>" />
@@ -219,7 +219,7 @@ class Simple_Events_Pro_Recurrence {
                 if (!dateInput.value) return;
                 var action = document.querySelector('input[name="se_pro_exception_action"]:checked').value;
                 if (action === 'reschedule' && !newDateInput.value) {
-                    alert('<?php esc_attr_e('Please select a new date.', 'simple-events-pro'); ?>');
+                    alert('<?php esc_attr_e('Please select a new date.', 'coqui-events-pro'); ?>');
                     return;
                 }
 
@@ -228,11 +228,11 @@ class Simple_Events_Pro_Recurrence {
                 div.style.cssText = 'border-bottom: 1px solid #eee; padding: 10px 0;';
                 var html = '<p style="margin: 0;"><strong>' + dateInput.value + '<\/strong><\/p>';
                 if (action === 'skip') {
-                    html += '<p style="margin: 5px 0;"><span style="color: #999;"><?php esc_html_e('Skip this occurrence', 'simple-events-pro'); ?><\/span><\/p>';
+                    html += '<p style="margin: 5px 0;"><span style="color: #999;"><?php esc_html_e('Skip this occurrence', 'coqui-events-pro'); ?><\/span><\/p>';
                 } else {
-                    html += '<p style="margin: 5px 0;"><?php esc_html_e('Reschedule to:', 'simple-events-pro'); ?> <strong>' + newDateInput.value + '<\/strong><\/p>';
+                    html += '<p style="margin: 5px 0;"><?php esc_html_e('Reschedule to:', 'coqui-events-pro'); ?> <strong>' + newDateInput.value + '<\/strong><\/p>';
                 }
-                html += '<p style="margin: 5px 0;"><button class="button button-small se-pro-exception-remove" data-date="' + dateInput.value + '" type="button"><?php esc_html_e('Remove', 'simple-events-pro'); ?><\/button><\/p>';
+                html += '<p style="margin: 5px 0;"><button class="button button-small se-pro-exception-remove" data-date="' + dateInput.value + '" type="button"><?php esc_html_e('Remove', 'coqui-events-pro'); ?><\/button><\/p>';
                 div.innerHTML = html;
                 list.appendChild(div);
                 updateJSON();

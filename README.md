@@ -1,12 +1,12 @@
-# Simple Events Pro
+# Coqui Events Pro
 
-Premium features for [Simple Events CPT](https://github.com/jlisojo/simple-events-cpt).
+Premium features for [Coqui Events](https://github.com/jlisojo/coqui-events).
 
 ## Requirements
 
 - WordPress 6.0+
 - PHP 7.4+
-- Simple Events CPT installed and active
+- Coqui Events installed and active
 
 ## Current features
 
@@ -34,7 +34,7 @@ The calendar displays events inline on their dates, with month navigation. Click
 
 ### Gutenberg Event Calendar block
 
-In the WordPress Block Editor, add **Event Calendar** (`simple-events-pro/event-calendar`). Its sidebar settings let editors choose an optional initial month in `YYYY-MM-DD` format and show or hide the category filter. The block previews the dynamic calendar inside the editor and retains the same AJAX month navigation on the published page.
+In the WordPress Block Editor, add **Event Calendar** (`coqui-events-pro/event-calendar`). Its sidebar settings let editors choose an optional initial month in `YYYY-MM-DD` format and show or hide the category filter. The block previews the dynamic calendar inside the editor and retains the same AJAX month navigation on the published page.
 
 ### iCalendar export
 

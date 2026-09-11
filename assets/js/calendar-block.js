@@ -7,15 +7,15 @@
     var ToggleControl = components.ToggleControl;
     var ServerSideRender = serverSideRender;
 
-    blocks.registerBlockType('simple-events-pro/event-calendar', {
-        title: __('Event Calendar', 'simple-events-pro'),
-        description: __('Display a navigable monthly event calendar.', 'simple-events-pro'),
+    blocks.registerBlockType('coqui-events-pro/event-calendar', {
+        title: __('Event Calendar', 'coqui-events-pro'),
+        description: __('Display a navigable monthly event calendar.', 'coqui-events-pro'),
         icon: 'calendar-alt',
         category: 'widgets',
         keywords: [
-            __('events', 'simple-events-pro'),
-            __('calendar', 'simple-events-pro'),
-            __('recurring', 'simple-events-pro')
+            __('events', 'coqui-events-pro'),
+            __('calendar', 'coqui-events-pro'),
+            __('recurring', 'coqui-events-pro')
         ],
         attributes: {
             month: {
@@ -34,12 +34,12 @@
             return [
                 el(InspectorControls, { key: 'inspector' },
                     el(PanelBody, {
-                        title: __('Calendar Settings', 'simple-events-pro'),
+                        title: __('Calendar Settings', 'coqui-events-pro'),
                         initialOpen: true
                     },
                     el(TextControl, {
-                        label: __('Initial Month', 'simple-events-pro'),
-                        help: __('Optional date in YYYY-MM-DD format. Leave blank for the current month.', 'simple-events-pro'),
+                        label: __('Initial Month', 'coqui-events-pro'),
+                        help: __('Optional date in YYYY-MM-DD format. Leave blank for the current month.', 'coqui-events-pro'),
                         value: attributes.month,
                         placeholder: '2026-09-01',
                         onChange: function (value) {
@@ -47,16 +47,16 @@
                         }
                     }),
                     el(ToggleControl, {
-                        label: __('Show Category Filter', 'simple-events-pro'),
+                        label: __('Show Category Filter', 'coqui-events-pro'),
                         checked: attributes.show_filters,
                         onChange: function (value) {
                             setAttributes({ show_filters: value });
                         }
                     }))
                 ),
-                el('div', { key: 'preview', className: 'simple-events-pro-calendar-block-preview' },
+                el('div', { key: 'preview', className: 'coqui-events-pro-calendar-block-preview' },
                     el(ServerSideRender, {
-                        block: 'simple-events-pro/event-calendar',
+                        block: 'coqui-events-pro/event-calendar',
                         attributes: attributes
                     })
                 )

@@ -1,6 +1,6 @@
 <?php
 /**
- * iCalendar export for Simple Events Pro.
+ * iCalendar export for Coqui Events Pro.
  */
 
 if (!defined('ABSPATH')) {
@@ -35,7 +35,7 @@ class Simple_Events_Pro_iCal {
 
         $ical = "BEGIN:VCALENDAR\r\n";
         $ical .= "VERSION:2.0\r\n";
-        $ical .= "PRODID:-//Simple Events Pro//WordPress//EN\r\n";
+        $ical .= "PRODID:-//Coqui Events Pro//WordPress//EN\r\n";
         $ical .= "CALSCALE:GREGORIAN\r\n";
         $ical .= "METHOD:PUBLISH\r\n";
         $ical .= "BEGIN:VEVENT\r\n";
@@ -81,7 +81,7 @@ class Simple_Events_Pro_iCal {
 
         $ical = "BEGIN:VCALENDAR\r\n";
         $ical .= "VERSION:2.0\r\n";
-        $ical .= "PRODID:-//Simple Events Pro//WordPress//EN\r\n";
+        $ical .= "PRODID:-//Coqui Events Pro//WordPress//EN\r\n";
         $ical .= "CALSCALE:GREGORIAN\r\n";
         $ical .= "METHOD:PUBLISH\r\n";
         $ical .= "X-WR-CALNAME:" . self::escape_ical_text($title) . "\r\n";
